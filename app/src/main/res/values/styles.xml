@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <style name="CollapsingToolbar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1.5</item>
+        <item name="android:shadowColor">#000</item>
+    </style>
+
+
+    <style name="CollapsingToolbar1" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+
+</resources>
+
+
+
+    <!--android:shadowColor="#000"-->
+    <!--android:shadowDx="1"-->
+    <!--android:shadowDy="1"-->
+    <!--android:shadowRadius="1.5"-->

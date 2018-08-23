@@ -1,0 +1,400 @@
+<android.support.design.widget.CoordinatorLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimaryDark">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:id="@+id/activity_registration_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Model Registration"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#606060" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/logo" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_student_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:theme="@style/AppTheme"
+                android:textColorHint="#606060">
+
+                <EditText
+                    android:id="@+id/input_student_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Name"
+                    android:inputType="textPersonName"
+                    android:singleLine="true"
+                    android:textColorHint="#fff"
+                    android:textColor="#fff"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_student_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:theme="@style/AppTheme"
+                android:textColorHint="#606060">
+
+                <EditText
+                    android:id="@+id/input_student_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Eligibility"
+                    android:inputType="text"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_student_number15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:theme="@style/AppTheme"
+                android:textColorHint="#606060">
+
+                <EditText
+                    android:id="@+id/input_student_number15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Age"
+                    android:inputType="number"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/calenderbatchstartdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/gradient"
+                android:text="dd/mm/yyyy"
+                android:textSize="15sp"
+                android:textColor="#000"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:theme="@style/AppTheme"
+                android:textColorHint="#606060">
+
+                <EditText
+                    android:id="@+id/input_email"
+                    android:layout_width="match_parent"
+                    android:textColorHint="#fff"
+                    android:layout_height="wrap_content"
+                    android:hint="Gender"
+                    android:inputType="text"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_fees"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:theme="@style/AppTheme"
+                android:textColorHint="#606060">
+
+
+                <EditText
+                    android:id="@+id/input_fees"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="City"
+                    android:textColorHint="#fff"
+                    android:inputType="text"
+                    android:singleLine="true"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_downpayment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:theme="@style/AppTheme"
+                android:textColorHint="#606060">
+
+
+                <EditText
+                    android:id="@+id/input_downpayment"
+                    android:layout_width="match_parent"
+                    android:textColorHint="#fff"
+                    android:layout_height="wrap_content"
+                    android:hint="Height (CM)"
+                    android:inputType="number"
+                    android:singleLine="true"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_no_of_installments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:theme="@style/AppTheme"
+                android:textColorHint="#606060">
+
+
+                <EditText
+                    android:id="@+id/input_no_of_installments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Education"
+                    android:textColorHint="#fff"
+                    android:inputType="text"
+                    android:maxLength="1"
+                    android:singleLine="true"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_no_of_installments1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:theme="@style/AppTheme"
+                android:textColorHint="#606060">
+
+
+                <EditText
+                    android:id="@+id/input_no_of_installments1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Skin"
+                    android:textColorHint="#fff"
+                    android:inputType="text"
+                    android:maxLength="1"
+                    android:singleLine="true"/>
+
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_no_of_installments2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:theme="@style/AppTheme"
+                android:textColorHint="#606060">
+
+
+                <EditText
+                    android:id="@+id/input_no_of_installments2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Eyes"
+                    android:textColorHint="#fff"
+                    android:inputType="text"
+                    android:maxLength="1"
+                    android:singleLine="true"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_no_of_installments3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:theme="@style/AppTheme"
+                android:textColorHint="#606060">
+
+
+                <EditText
+                    android:id="@+id/input_no_of_installments3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Martial Status"
+                    android:textColorHint="#fff"
+                    android:inputType="text"
+                    android:maxLength="1"
+                    android:singleLine="true"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_no_of_installments5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:theme="@style/AppTheme"
+                android:textColorHint="#606060">
+
+
+                <EditText
+                    android:id="@+id/input_no_of_installment5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Languages (Seprated by comma)"
+                    android:textColorHint="#fff"
+                    android:inputType="text"
+                    android:maxLength="1"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_no_of_installments6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:theme="@style/AppTheme"
+                android:textColorHint="#606060">
+
+
+                <EditText
+                    android:id="@+id/input_no_of_installments6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Training"
+                    android:textColorHint="#fff"
+                    android:inputType="text"
+                    android:maxLength="1"
+                    android:singleLine="true"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_no_of_installments7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:theme="@style/AppTheme"
+                android:textColorHint="#606060">
+
+
+                <EditText
+                    android:id="@+id/input_no_of_installments7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Passport"
+                    android:textColorHint="#fff"
+                    android:inputType="text"
+                    android:maxLength="1"
+                    android:singleLine="true"/>
+
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_no_of_installments8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:theme="@style/AppTheme"
+                android:textColorHint="#606060">
+
+
+                <EditText
+                    android:id="@+id/input_no_of_installments8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="C/W/H"
+                    android:textColorHint="#fff"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:singleLine="true"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_no_of_installments12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:theme="@style/AppTheme"
+                android:textColorHint="#606060">
+
+
+                <EditText
+                    android:id="@+id/input_no_of_installments12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="C/W/H"
+                    android:textColorHint="#fff"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:singleLine="true"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_no_of_installments11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:theme="@style/AppTheme"
+                android:textColorHint="#606060">
+
+
+                <EditText
+                    android:id="@+id/input_no_of_installments11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Biography"
+                    android:textColorHint="#fff"
+                    android:inputType="text"
+                    android:maxLength="1"
+                    android:singleLine="true"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <LinearLayout
+                android:id="@+id/installmentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btn_signup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/gradient"
+                android:text="Register"
+                android:textColor="#000" />
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>
