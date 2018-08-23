@@ -1,5 +1,6 @@
 package com.example.rashil.glamstr;
 
+import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -28,13 +29,12 @@ public class ProfileActivity extends AppCompatActivity {
         //Remove title bar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_profile);
+        ProfileBinding= DataBindingUtil.setContentView(this,R.layout.activity_profile);
 
 /// /
 //        CollapsingToolbarLayout collapsingToolbarLayout =
 //                findViewById(R.id.profileactivity_collapsing_toolbar);
-
-        ProfileBinding.profileactivityCollapsingToolbar.setTitle("Naveena Jain");
+                ProfileBinding.profileactivityCollapsingToolbar.setTitle("Naveena Jain");
         ProfileBinding.profileactivityCollapsingToolbar.setContentScrimColor(Color.BLACK);
         ProfileBinding.profileactivityCollapsingToolbar.setExpandedTitleColor(Color.WHITE);
         ProfileBinding.profileactivityCollapsingToolbar.setCollapsedTitleGravity(0);
