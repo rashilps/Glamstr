@@ -53,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_lock_open_black_24dp"
                     android:hint="Password"
-                    android:inputType="textEmailAddress"
+                    android:inputType="textPassword"
                     android:textColor="#fff"
                     android:textColorHint="#fff"
                     tools:text="Password" />

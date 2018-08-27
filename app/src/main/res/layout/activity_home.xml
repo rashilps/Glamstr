@@ -33,6 +33,12 @@
                     android:layout_gravity="center|center_horizontal"
                     android:layout_marginTop="15dp"
                     android:src="@drawable/logo" />
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content" -->
+                    <!--android:text="www.glamstr.com"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_gravity="center|center_horizontal"/>-->
 
 
 

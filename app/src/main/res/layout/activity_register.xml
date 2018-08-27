@@ -299,7 +299,6 @@
                 android:theme="@style/AppTheme"
                 android:textColorHint="#606060">
 
-
                 <EditText
                     android:id="@+id/input_no_of_installments7"
                     android:layout_width="match_parent"
