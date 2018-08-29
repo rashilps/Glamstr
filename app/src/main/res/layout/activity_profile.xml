@@ -65,81 +65,84 @@
                 android:background="@color/colorPrimaryDark">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
-                    <FrameLayout
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorPrimary"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="?selectableItemBackground"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/expandable1"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:onClick="expandableTextView1"
+                                android:text="Model's Profile"
+                                android:textColor="#fff"
+                                android:textSize="25sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:background="@drawable/ic_arrow_drop_down_black_24dp" />
+
+                        </FrameLayout>
+
+
+                        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                            android:id="@+id/expandableLayout1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimaryDark"
+                            app:ael_duration="400"
+                            app:ael_expanded="false"
+                            app:ael_interpolator="linear"
+                            app:ael_orientation="vertical">
+
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/recyclerView1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:background="?selectableItemBackground"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/expandable1"
+                            android:id="@+id/expandable2"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
-                            android:onClick="expandableTextView1"
-                            android:text="Model's Profile"
+                            android:padding="10dp"
+                            android:text="Model's Photos"
                             android:textColor="#fff"
                             android:textSize="25sp" />
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:background="@drawable/ic_arrow_drop_down_black_24dp" />
-
-                    </FrameLayout>
-
-
-                    <com.github.aakira.expandablelayout.ExpandableRelativeLayout
-                        android:id="@+id/expandableLayout1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/colorPrimaryDark"
-                        app:ael_duration="400"
-                        app:ael_expanded="false"
-                        app:ael_interpolator="linear"
-                        app:ael_orientation="vertical">
-
-
-                        <android.support.v7.widget.RecyclerView
-                            android:id="@+id/recyclerView1"
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/pager"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-                    </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
-
-
+                            android:layout_height="700dp"
+                            android:padding="10dp" />
+                    </LinearLayout>
                 </LinearLayout>
-
-
             </android.support.v4.widget.NestedScrollView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/expandable2"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:padding="10dp"
-                    android:text="Model's Photos"
-                    android:textColor="#fff"
-                    android:textSize="25sp" />
-
-                <android.support.v4.view.ViewPager
-                    android:id="@+id/pager"
-                    android:layout_width="match_parent"
-                    android:layout_height="700dp"
-                    android:padding="10dp" />
-            </LinearLayout>
-
         </LinearLayout>
     </android.support.design.widget.CoordinatorLayout>
 </layout>

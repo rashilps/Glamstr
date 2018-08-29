@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding MainBinding;
+    public static PrefConfig prefConfig;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+        prefConfig = new PrefConfig(this);
+
+
     }
 
     public void checkLogin() {
