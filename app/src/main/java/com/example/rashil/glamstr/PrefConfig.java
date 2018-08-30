@@ -27,7 +27,7 @@ public class PrefConfig {
     }
     public void writeName(String name)
     {
-        SharedPreferences.Editor editor =sharedPreferences.edit();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(context.getString(R.string.pref_user_name),name);
     }
     public String readName(){

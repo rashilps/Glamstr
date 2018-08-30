@@ -2,6 +2,7 @@ package com.example.rashil.glamstr;
 
 import android.content.Context;
 import android.os.Parcelable;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +17,7 @@ public class SlidingImagePagerAdapter extends PagerAdapter {
     private Context context;
 
 
-    public SlidingImagePagerAdapter(Context context,ArrayList<Integer> IMAGES) {
+    public SlidingImagePagerAdapter(FragmentActivity context, ArrayList<Integer> IMAGES) {
         this.context = context;
         this.IMAGES=IMAGES;
         inflater = LayoutInflater.from(context);

@@ -4,12 +4,15 @@ import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 
 import com.example.rashil.glamstr.databinding.ActivityProfileBinding;
@@ -21,7 +24,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class ProfileActivity extends AppCompatActivity {
+public class ProfileFragment extends Fragment {
     ActivityProfileBinding ProfileBinding;
     NestedScrollViewContentBinding nestedScrollViewContentBinding;
     ExpandableRelativeLayout expandableLayout1;
@@ -34,13 +37,16 @@ public class ProfileActivity extends AppCompatActivity {
 
     private List<Profile> profileList = new ArrayList<>();
 
+    public ProfileFragment() {
+
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        //Remove title bar
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        ProfileBinding= DataBindingUtil.setContentView(this,R.layout.activity_profile);
+        ProfileBinding= DataBindingUtil.setContentView(getActivity(),R.layout.activity_profile);
         ProfileBinding.profileactivityCollapsingToolbar.setTitle("Naveena Jain");
         ProfileBinding.profileactivityCollapsingToolbar.setContentScrimColor(Color.BLACK);
         ProfileBinding.profileactivityCollapsingToolbar.setExpandedTitleColor(Color.WHITE);
@@ -48,14 +54,18 @@ public class ProfileActivity extends AppCompatActivity {
         ProfileBinding.profileactivityCollapsingToolbar.setExpandedTitleMarginStart(0);
 
 
-        mAdapter = new ProfileAdapter(profileList, this);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        mAdapter = new ProfileAdapter(profileList);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         ProfileBinding.recyclerView1.setLayoutManager(mLayoutManager);
         ProfileBinding.recyclerView1.setItemAnimator(new DefaultItemAnimator());
         ProfileBinding.recyclerView1.setAdapter(mAdapter);
         prepareProfileData();
         init();
+
+
+        return inflater.inflate(R.layout.activity_profile, container, false);
     }
+
 
     private void prepareProfileData() {
         Profile profile = new Profile("Name", "Eligibility", "Gender", "City", "Education", "Skin", "Eyes", "Martial", "Languages", "Training", "Passport", "CHW", "Biography", "Height", "Age");
@@ -70,10 +80,10 @@ public class ProfileActivity extends AppCompatActivity {
         for(int i=0;i<IMAGES.length;i++)
             ImagesArray.add(IMAGES[i]);
 
-        mPager = findViewById(R.id.pager);
+        mPager = mPager.findViewById(R.id.pager);
 
 
-        mPager.setAdapter(new SlidingImagePagerAdapter(ProfileActivity.this,ImagesArray));
+        mPager.setAdapter(new SlidingImagePagerAdapter(getActivity(),ImagesArray));
 
         NUM_PAGES =IMAGES.length;
 

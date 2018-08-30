@@ -1,3 +1,5 @@
+<layout>
+
 <android.support.design.widget.CoordinatorLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -49,11 +51,47 @@
                 android:theme="@style/AppTheme"
                 android:textColorHint="#606060">
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/input_student_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Name"
+                    android:inputType="textPersonName"
+                    android:singleLine="true"
+                    android:textColorHint="#fff"
+                    android:textColor="#fff"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_student_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:theme="@style/AppTheme"
+                android:textColorHint="#606060">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_student_user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Username"
+                    android:inputType="textPersonName"
+                    android:singleLine="true"
+                    android:textColorHint="#fff"
+                    android:textColor="#fff"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_student_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:theme="@style/AppTheme"
+                android:textColorHint="#606060">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input_student_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
                     android:inputType="textPersonName"
                     android:singleLine="true"
                     android:textColorHint="#fff"
@@ -68,7 +106,7 @@
                 android:theme="@style/AppTheme"
                 android:textColorHint="#606060">
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/input_student_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -86,7 +124,7 @@
                 android:theme="@style/AppTheme"
                 android:textColorHint="#606060">
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/input_student_number15"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -117,7 +155,7 @@
                 android:theme="@style/AppTheme"
                 android:textColorHint="#606060">
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/input_email"
                     android:layout_width="match_parent"
                     android:textColorHint="#fff"
@@ -135,7 +173,7 @@
                 android:textColorHint="#606060">
 
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/input_fees"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -155,7 +193,7 @@
                 android:textColorHint="#606060">
 
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/input_downpayment"
                     android:layout_width="match_parent"
                     android:textColorHint="#fff"
@@ -175,7 +213,7 @@
                 android:textColorHint="#606060">
 
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/input_no_of_installments"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -196,7 +234,7 @@
                 android:textColorHint="#606060">
 
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/input_no_of_installments1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -216,7 +254,7 @@
                 android:textColorHint="#606060">
 
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/input_no_of_installments2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -237,7 +275,7 @@
                 android:textColorHint="#606060">
 
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/input_no_of_installments3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -258,7 +296,7 @@
                 android:textColorHint="#606060">
 
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/input_no_of_installment5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -279,7 +317,7 @@
                 android:textColorHint="#606060">
 
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/input_no_of_installments6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -299,7 +337,7 @@
                 android:theme="@style/AppTheme"
                 android:textColorHint="#606060">
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/input_no_of_installments7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -319,7 +357,7 @@
                 android:textColorHint="#606060">
 
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/input_no_of_installments8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -340,7 +378,7 @@
                 android:textColorHint="#606060">
 
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/input_no_of_installments12"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -361,7 +399,7 @@
                 android:textColorHint="#606060">
 
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/input_no_of_installments11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -397,3 +435,4 @@
         </LinearLayout>
     </ScrollView>
 </android.support.design.widget.CoordinatorLayout>
+</layout>

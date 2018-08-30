@@ -17,18 +17,16 @@ import java.util.List;
 public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.MyViewHolder> {
 
     private List<Profile> profileList;
-    private Context mctx;
 
-    ProfileAdapter(List<Profile> profileList, Context mctx) {
+    ProfileAdapter(List<Profile> profileList) {
         this.profileList = profileList;
-        this.mctx = mctx;
     }
 
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-        View itemView = LayoutInflater.from(mctx)
+        View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_item, null, false);
         return new MyViewHolder(itemView);
     }
