@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.rashil.glamstr.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity implements Login.onLoginFormActivityListner {
+public class MainActivity extends AppCompatActivity implements Login.onLoginFormActivityListner,ProfileFragment.OnLogoutListener {
     ActivityMainBinding activityMainBinding;
     public static PrefConfig prefConfig;
     public static ApiInterface apiInterface;
@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements Login.onLoginForm
 
 
         prefConfig = new PrefConfig(this);
+        apiInterface = ApiClient.getApiCLient().create(ApiInterface.class);
+
 
         if(findViewById(R.id.fragment_container)!=null){
             if(savedInstanceState!=null){
@@ -35,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements Login.onLoginForm
         }
 
 
-        apiInterface = ApiClient.getApiCLient().create(ApiInterface.class);
 
     }
 
@@ -45,13 +46,22 @@ public class MainActivity extends AppCompatActivity implements Login.onLoginForm
                 .beginTransaction()
                 .replace(R.id.fragment_container,new RegisterFragment())
                 .addToBackStack(null)
-                .commit(); }
+                .commit();
+    }
 
     @Override
     public void performLogin(String name) {
-
+        prefConfig.writeName(name);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
     }
 
+
+    @Override
+    public void logoutPerformed() {
+        prefConfig.writeLoginStatus(false);
+        prefConfig.writeName("User");
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Login()).commit();
+    }
 //    public void checkLogin() {
 //
 //        final String email = MainBinding.username.getText().toString();

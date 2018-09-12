@@ -4,6 +4,7 @@ import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -20,22 +21,28 @@ import com.example.rashil.glamstr.databinding.NestedScrollViewContentBinding;
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class ProfileFragment extends Fragment {
     ActivityProfileBinding ProfileBinding;
-    NestedScrollViewContentBinding nestedScrollViewContentBinding;
     ExpandableRelativeLayout expandableLayout1;
     ProfileAdapter mAdapter;
-    private static ViewPager mPager;
+    private ViewPager mPager;
     private static int currentPage = 0;
     private static int NUM_PAGES = 0;
     private static final Integer[] IMAGES= {R.drawable.profile2,R.drawable.profile3,R.drawable.profile4, R.drawable.profile5};
     private ArrayList<Integer> ImagesArray = new ArrayList<Integer>();
 
     private List<Profile> profileList = new ArrayList<>();
+
+    OnLogoutListener logoutListener;
+
+    public interface OnLogoutListener{
+        public void logoutPerformed();
+    }
 
     public ProfileFragment() {
 
@@ -46,8 +53,9 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        ProfileBinding= DataBindingUtil.setContentView(getActivity(),R.layout.activity_profile);
-        ProfileBinding.profileactivityCollapsingToolbar.setTitle("Naveena Jain");
+        ProfileBinding= ActivityProfileBinding.inflate(inflater,container,false);
+        mPager=ProfileBinding.pager;
+        ProfileBinding.profileactivityCollapsingToolbar.setTitle("Welcome "+MainActivity.prefConfig.readName());
         ProfileBinding.profileactivityCollapsingToolbar.setContentScrimColor(Color.BLACK);
         ProfileBinding.profileactivityCollapsingToolbar.setExpandedTitleColor(Color.WHITE);
         ProfileBinding.profileactivityCollapsingToolbar.setCollapsedTitleGravity(0);
@@ -60,10 +68,11 @@ public class ProfileFragment extends Fragment {
         ProfileBinding.recyclerView1.setItemAnimator(new DefaultItemAnimator());
         ProfileBinding.recyclerView1.setAdapter(mAdapter);
         prepareProfileData();
+
         init();
 
 
-        return inflater.inflate(R.layout.activity_profile, container, false);
+        return ProfileBinding.getRoot();
     }
 
 
@@ -72,16 +81,8 @@ public class ProfileFragment extends Fragment {
         profileList.add(profile);
     }
 
-    public void expandableTextView1(View view) {
-//        expandableLayout1 = findViewById(R.id.expandableLayout1);
-        ProfileBinding.expandableLayout1.toggle();
-    }
     private void init() {
-        for(int i=0;i<IMAGES.length;i++)
-            ImagesArray.add(IMAGES[i]);
-
-        mPager = mPager.findViewById(R.id.pager);
-
+        ImagesArray.addAll(Arrays.asList(IMAGES));
 
         mPager.setAdapter(new SlidingImagePagerAdapter(getActivity(),ImagesArray));
 
@@ -106,4 +107,21 @@ public class ProfileFragment extends Fragment {
 //        }, 3000, 3000);
 
 }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        ProfileBinding.expandable1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ProfileBinding.expandableLayout1.toggle();
+            }
+        });
+        ProfileBinding.logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logoutListener.logoutPerformed();
+            }
+        });
+    }
 }
