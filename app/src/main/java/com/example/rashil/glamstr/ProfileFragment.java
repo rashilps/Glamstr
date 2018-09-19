@@ -1,5 +1,7 @@
 package com.example.rashil.glamstr;
 
+import android.app.Activity;
+import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -20,6 +22,7 @@ import com.example.rashil.glamstr.databinding.ActivityProfileBinding;
 import com.example.rashil.glamstr.databinding.NestedScrollViewContentBinding;
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -55,7 +58,7 @@ public class ProfileFragment extends Fragment {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         ProfileBinding= ActivityProfileBinding.inflate(inflater,container,false);
         mPager=ProfileBinding.pager;
-        ProfileBinding.profileactivityCollapsingToolbar.setTitle("Welcome "+MainActivity.prefConfig.readName());
+        ProfileBinding.profileactivityCollapsingToolbar.setTitle("Welcome "+ MainActivity.prefConfig.readName());
         ProfileBinding.profileactivityCollapsingToolbar.setContentScrimColor(Color.BLACK);
         ProfileBinding.profileactivityCollapsingToolbar.setExpandedTitleColor(Color.WHITE);
         ProfileBinding.profileactivityCollapsingToolbar.setCollapsedTitleGravity(0);
@@ -120,8 +123,16 @@ public class ProfileFragment extends Fragment {
         ProfileBinding.logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                logoutListener.logoutPerformed();
+                 logoutListener.logoutPerformed();
             }
         });
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        Activity activity = (Activity) context;
+        logoutListener = (OnLogoutListener) activity;
+
     }
 }

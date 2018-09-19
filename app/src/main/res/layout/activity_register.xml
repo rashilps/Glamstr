@@ -35,13 +35,23 @@
                 android:layout_marginTop="10dp"
                 android:background="#606060" />
 
-            <ImageView
+            <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="50dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/logo" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/ic_launcher_background" />
+
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/input_layout_student_name"

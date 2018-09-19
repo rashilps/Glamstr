@@ -49,7 +49,7 @@ public class Login extends Fragment {
         fragmentLoginBinding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "CLicked", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), "CLicked", Toast.LENGTH_SHORT).show();
                 performLogin();
             }
         });

@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements Login.onLoginForm
             }
             else
             {
-                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,new Login()).commit();
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,new Login()).addToBackStack(null).commit();
             }
         }
 
@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements Login.onLoginForm
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container,new RegisterFragment())
-                .addToBackStack(null)
                 .commit();
     }
 
